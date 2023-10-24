@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ThirdwebProvider, coinbaseWallet, metamaskWallet, phantomWallet, rainbowWallet, trustWallet, walletConnect, zerionWallet } from "@thirdweb-dev/react";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -22,8 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
       phantomWallet(),
     ]}
   >
-        <Component {...pageProps} />;
-        
+  <Component {...pageProps} />;
+  <ConnectWallet />
+
 </ThirdwebProvider></div>)
  
 };
